@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Privacy Policy — CardCapture</title>
-<meta name="description" content="CardCapture privacy policy: no analytics, no tracking, no ads. Sign-in and iCloud sync are optional and gate nothing." />
+<meta name="description" content="CardCapture privacy policy: no analytics, no tracking, no ads. Signing in is optional, and nothing about you is sent to a server." />
 <meta name="theme-color" content="#0b0d10" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230b0d10'/><circle cx='14' cy='14' r='7' fill='none' stroke='%232ebfb3' stroke-width='2'/><path d='M19 19 L26 26' stroke='%232ebfb3' stroke-width='2.5' stroke-linecap='round'/></svg>" />
 <style>
@@ -26,6 +26,7 @@
   h1{color:var(--text); font-size:clamp(28px,5vw,38px); line-height:1.15; letter-spacing:-.03em; margin:0 0 14px}
   .lead{font-size:17px; margin:0 0 26px}
   h2{color:var(--text); font-size:17px; letter-spacing:-.01em; margin:34px 0 10px}
+  h3{color:var(--text); font-size:15px; letter-spacing:-.01em; margin:22px 0 6px}
   p,li{font-size:15px}
   ul{padding-left:20px; margin:10px 0}
   li{margin:6px 0}
@@ -55,7 +56,7 @@
     <span>CardCapture</span>
   </a>
 
-  <p class="kicker">Privacy Policy · Last updated 3 September 2026</p>
+  <p class="kicker">Privacy Policy · Last updated 1 October 2026</p>
   <h1>What CardCapture knows about you.</h1>
   <p class="lead">Almost nothing, and none of it reaches us. There is no CardCapture server. No
   analytics, no tracking, no advertising identifier, and no third-party SDK that phones home.
@@ -66,7 +67,7 @@
     <ul>
       <li><strong>Nothing is sent to us,</strong> because there is nowhere to send it. CardCapture has no backend.</li>
       <li><strong>Scanning happens on your device</strong> — the camera, the text recognition, the artwork matching, the print and condition analysis. No photo is uploaded for recognition.</li>
-      <li><strong>Signing in is optional</strong> and unlocks nothing. Every feature works signed out.</li>
+      <li><strong>Signing in is offered, not required.</strong> If you do, the account is stored on your device — there is no server for it to reach. Every feature works either way, and a subscription follows your Apple Account rather than any account of ours.</li>
       <li><strong>iCloud sync is off until you turn it on,</strong> and writes to your own private iCloud storage, which we cannot read.</li>
       <li><strong>Price lookups name a card, never you.</strong></li>
     </ul>
@@ -80,14 +81,30 @@
   the app does not silently reset your remaining free scans, and any marketplace API keys you
   choose to enter. Keychain items are readable only by this app on this device.</p>
 
-  <h2>Sign in with Apple — optional</h2>
-  <p>If you sign in, Apple gives the app a stable identifier for you, and — on the first
-  authorisation only — your name if you allow it. Both are kept in the keychain on your device
-  and are used to show who is signed in. Neither is transmitted anywhere: there is no server to
-  receive them.</p>
-  <p>CardCapture does not request your email address. If you revoke access in
-  <em>Settings → your name → Sign in with Apple</em>, the app notices and signs you out locally.
-  Signing out deletes the stored identifier.</p>
+  <h2>Signing in — optional, and nothing reaches us</h2>
+  <p>CardCapture offers to sign you in on first launch, and lets you carry on without an
+  account if you would rather. There are two ways to sign in, and neither of them creates an
+  account on a server, because there is no CardCapture server. What is stored is kept in the iOS
+  keychain on your device, and you can sign in or out later from Settings &rsaquo; Account.</p>
+
+  <h3>Sign in with Apple</h3>
+  <p>Apple gives the app a stable identifier for you, and — on the first authorisation only —
+  your name if you allow it. Both are kept in the keychain and are used to show who is signed
+  in. CardCapture does not request your email address. If you revoke access in
+  <em>Settings → your name → Sign in with Apple</em>, the app notices and signs you out
+  locally.</p>
+
+  <h3>Email and password</h3>
+  <p>This one creates a profile <em>on this iPhone only</em>. The address you type and a
+  cryptographic hash of your password (PBKDF2-HMAC-SHA256, 210,000 iterations, with a random
+  salt) go into the keychain. The password itself is never stored, and neither the address nor
+  the password is sent anywhere — there is no server to send them to, and for the same reason
+  there is no password reset and no way to recover the account if you forget it. The app says so
+  on the screen where you choose this option.</p>
+
+  <p>Signing out keeps your collection and, for the email option, keeps the stored credential so
+  you can sign back in. Deleting the email account erases it from the keychain permanently; your
+  collection is not deleted.</p>
 
   <h2>iCloud sync — optional, and off by default</h2>
   <p>When you enable sync, your collection is written to <strong>your own private CloudKit
@@ -105,15 +122,30 @@
     <tr><th>When</th><th>Where it goes</th></tr>
     <tr>
       <td>You download a card database</td>
-      <td>Scryfall (Magic), YGOPRODeck (Yu-Gi-Oh), the ApiTCG data repositories on GitHub
-      (One Piece, Digimon, Dragon Ball, Union Arena), LorcanaJSON (Lorcana), and the-fab-cube on
-      GitHub (Flesh and Blood). Pokémon ships inside the app and downloads nothing.</td>
+      <td>Scryfall (Magic), YGOPRODeck (Yu-Gi-Oh), OnePieceJSON on GitHub (One Piece), digimoncard.io
+      (Digimon), gcg-api on GitHub (Gundam), the ApiTCG data repositories on GitHub (Dragon Ball, Union Arena, and One Piece or
+      Digimon when their first source cannot be reached), LorcanaJSON (Lorcana), the-fab-cube on GitHub (Flesh and Blood),
+      and TCGdex (Japanese Pokémon). Pokémon in English ships inside the app and downloads nothing. A downloaded
+      database is fetched again about once a week, on Wi-Fi, so new sets arrive.</td>
     </tr>
     <tr>
       <td>You price a card</td>
-      <td>The Pokémon TCG API, Scryfall or YGOPRODeck, depending on the game. If you have
+      <td>The Pokémon TCG API, TCGdex (Japanese Pokémon), Scryfall or YGOPRODeck, depending on the game. If you have
       supplied your own eBay, Amazon or JustTCG keys, that provider too — using your keys, for
       that one lookup.</td>
+    </tr>
+    <tr>
+      <td>You check a slab's certificate, or its sold prices</td>
+      <td>The grader's own site (PSA, CGC, Beckett, SGC or TAG) opens with the certificate number
+      read from the label, or eBay's sold listings or PriceCharting's price guide open with the card
+      and its grade. Nothing about you is sent.</td>
+    </tr>
+    <tr>
+      <td>You tap Find it for sale</td>
+      <td>The store you picked — eBay, Amazon, Cardmarket or TCGplayer — opens in its own app or
+      your browser, with the card's name, set and number in the address. Nothing about you is
+      sent, and nothing is sent at all until you tap. What you do on the store's site is between
+      you and the store, under its own privacy policy.</td>
     </tr>
     <tr>
       <td>A price alert checks in</td>
@@ -136,16 +168,23 @@
   <p>Price alerts are <strong>local</strong> notifications, created on your device by your
   device. CardCapture does not use push notifications and has no ability to send you one.</p>
 
+  <h2>Widgets</h2>
+  <p>The CardCapture widgets on your Home Screen, Lock Screen and in Control Center either open
+  the scanner or show your collection's value, card count and when it was last valued. The app
+  writes those few figures to a container on your device that only CardCapture and its own
+  widgets can read; nothing is sent anywhere for them.</p>
+
   <h2>Children</h2>
   <p>CardCapture is for collectors of any age and does not knowingly collect personal
   information from anyone, children included.</p>
 
   <h2>What Apple's privacy label says</h2>
-  <p>The app ships a <code>PrivacyInfo.xcprivacy</code> manifest declaring no tracking, and two
-  data types — <strong>User ID</strong> and <strong>Name</strong> — both solely from optional
-  Sign in with Apple, both linked to you by definition, and both used only to make the app work.
-  Nothing else is declared because nothing else is collected. This page is the readable version
-  of that declaration.</p>
+  <p>CardCapture's App Store page says <strong>Data Not Collected</strong>, and the app ships a
+  <code>PrivacyInfo.xcprivacy</code> manifest declaring no tracking and no collected data. That
+  follows Apple's own definition: data counts as collected when it leaves your device somewhere
+  the developer or a partner can reach it, and nothing about you does. What you sign in with
+  stays in your device's keychain; your collection stays in the app, or in your own private
+  iCloud if you turn sync on. This page is the readable version of that declaration.</p>
 
   <h2>Changes</h2>
   <p>If this policy changes, the date at the top changes with it. Material changes will be
