@@ -56,7 +56,7 @@
     <span>CardCapture</span>
   </a>
 
-  <p class="kicker">Privacy Policy · Last updated 1 October 2026</p>
+  <p class="kicker">Privacy Policy · Last updated 5 October 2026</p>
   <h1>What CardCapture knows about you.</h1>
   <p class="lead">Almost nothing, and none of it reaches us. There is no CardCapture server. No
   analytics, no tracking, no advertising identifier, and no third-party SDK that phones home.
@@ -68,7 +68,7 @@
       <li><strong>Nothing is sent to us,</strong> because there is nowhere to send it. CardCapture has no backend.</li>
       <li><strong>Scanning happens on your device</strong> — the camera, the text recognition, the artwork matching, the print and condition analysis. No photo is uploaded for recognition.</li>
       <li><strong>Signing in is offered, not required.</strong> If you do, the account is stored on your device — there is no server for it to reach. Every feature works either way, and a subscription follows your Apple Account rather than any account of ours.</li>
-      <li><strong>iCloud sync is off until you turn it on,</strong> and writes to your own private iCloud storage, which we cannot read.</li>
+      <li><strong>With an account, your collection is backed up to your own private iCloud,</strong> which we cannot read. Without one, it stays on your device unless you turn iCloud on.</li>
       <li><strong>Price lookups name a card, never you.</strong></li>
     </ul>
   </div>
@@ -106,12 +106,17 @@
   you can sign back in. Deleting the email account erases it from the keychain permanently; your
   collection is not deleted.</p>
 
-  <h2>iCloud sync — optional, and off by default</h2>
-  <p>When you enable sync, your collection is written to <strong>your own private CloudKit
-  database</strong>, under your Apple Account, in Apple's iCloud. That is your storage, not
-  ours. The developer of CardCapture has no access to it, and neither does any other CardCapture
-  user. Turning sync off stops further writes; deleting the app or signing out of iCloud removes
-  the app's access.</p>
+  <h2>iCloud backup — with an account, or when you turn it on</h2>
+  <p>When you sign in, your collection is written to <strong>your own private CloudKit
+  database</strong>, under your Apple Account, in Apple's iCloud, so your cards come back when
+  you sign in again — after reinstalling, or on another device signed into the same iCloud.
+  Without an account this happens only if you turn it on. That is your storage, not ours. The
+  developer of CardCapture has no access to it, and neither does any other CardCapture user. You
+  can turn it off in Settings &rsaquo; Account; turning it off stops further writes, and deleting
+  the app or signing out of iCloud removes the app's access.</p>
+  <p>The app also keeps a copy of your collection on your device for each of the last seven
+  days, and before anything removes more than half of it, so a mistake can be undone from
+  Settings &rsaquo; Account &rsaquo; Backups. These copies never leave the device.</p>
 
   <h2>What leaves your device, and to whom</h2>
   <p>Every request below identifies a <em>card</em>. None carries an account, a device
@@ -163,6 +168,10 @@
   <p>The camera is used to scan cards and, if you ask for it, to capture the tilt and edge
   photographs the verification checks need. All of that processing happens on your device.
   CardCapture does not request access to your photo library.</p>
+  <p>If you turn on <em>Keep a photo of each scan</em> in Settings &rsaquo; Scan log, a photo of
+  each scanned card is kept on your device — the newest 300 — and included when you export the
+  scan log yourself. It is off unless you turn it on, and the photos are never sent anywhere by
+  the app.</p>
 
   <h2>Notifications</h2>
   <p>Price alerts are <strong>local</strong> notifications, created on your device by your
@@ -183,8 +192,8 @@
   <code>PrivacyInfo.xcprivacy</code> manifest declaring no tracking and no collected data. That
   follows Apple's own definition: data counts as collected when it leaves your device somewhere
   the developer or a partner can reach it, and nothing about you does. What you sign in with
-  stays in your device's keychain; your collection stays in the app, or in your own private
-  iCloud if you turn sync on. This page is the readable version of that declaration.</p>
+  stays in your device's keychain; your collection stays in the app and, when you sign in or turn
+  it on, in your own private iCloud. This page is the readable version of that declaration.</p>
 
   <h2>Changes</h2>
   <p>If this policy changes, the date at the top changes with it. Material changes will be
