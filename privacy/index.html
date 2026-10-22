@@ -56,18 +56,20 @@
     <span>CardCapture</span>
   </a>
 
-  <p class="kicker">Privacy Policy · Last updated 5 October 2026</p>
+  <p class="kicker">Privacy Policy · Last updated 22 October 2026</p>
   <h1>What CardCapture knows about you.</h1>
-  <p class="lead">Almost nothing, and none of it reaches us. There is no CardCapture server. No
-  analytics, no tracking, no advertising identifier, and no third-party SDK that phones home.
+  <p class="lead">Almost nothing, and none of it is kept. CardCapture has no accounts on a server
+  and keeps no record of you. From version 1.1 it runs one small server, a price relay, which
+  passes price lookups on and writes no log. No analytics, no tracking, no advertising
+  identifier, and no third-party SDK that phones home.
   This page explains exactly what the app stores, what it sends, and where it goes.</p>
 
   <div class="card">
     <strong>The short version</strong>
     <ul>
-      <li><strong>Nothing is sent to us,</strong> because there is nowhere to send it. CardCapture has no backend.</li>
+      <li><strong>Nothing about you is kept by us.</strong> From version 1.1 some prices come through CardCapture's price relay: the request names a card, never you, and the relay writes no log. There is no CardCapture account server and no backend that stores anything about you.</li>
       <li><strong>Scanning happens on your device</strong> — the camera, the text recognition, the artwork matching, the print and condition analysis. No photo is uploaded for recognition.</li>
-      <li><strong>Signing in is offered, not required.</strong> If you do, the account is stored on your device — there is no server for it to reach. Every feature works either way, and a subscription follows your Apple Account rather than any account of ours.</li>
+      <li><strong>Signing in is offered, not required.</strong> If you do, the account is stored on your device — no CardCapture server holds it. Every feature works either way, and a subscription follows your Apple Account rather than any account of ours.</li>
       <li><strong>With an account, your collection is backed up to your own private iCloud,</strong> which we cannot read. Without one, it stays on your device unless you turn iCloud on.</li>
       <li><strong>Price lookups name a card, never you.</strong></li>
     </ul>
@@ -84,7 +86,7 @@
   <h2>Signing in — optional, and nothing reaches us</h2>
   <p>CardCapture offers to sign you in on first launch, and lets you carry on without an
   account if you would rather. There are two ways to sign in, and neither of them creates an
-  account on a server, because there is no CardCapture server. What is stored is kept in the iOS
+  account on a server, because CardCapture has no account server. What is stored is kept in the iOS
   keychain on your device, and you can sign in or out later from Settings &rsaquo; Account.</p>
 
   <h3>Sign in with Apple</h3>
@@ -98,7 +100,7 @@
   <p>This one creates a profile <em>on this iPhone only</em>. The address you type and a
   cryptographic hash of your password (PBKDF2-HMAC-SHA256, 210,000 iterations, with a random
   salt) go into the keychain. The password itself is never stored, and neither the address nor
-  the password is sent anywhere — there is no server to send them to, and for the same reason
+  the password is sent anywhere — CardCapture has no account server to send them to, and for the same reason
   there is no password reset and no way to recover the account if you forget it. The app says so
   on the screen where you choose this option.</p>
 
@@ -135,9 +137,19 @@
     </tr>
     <tr>
       <td>You price a card</td>
-      <td>The Pokémon TCG API, TCGdex (Japanese Pokémon), Scryfall or YGOPRODeck, depending on the game. If you have
-      supplied your own eBay, Amazon or JustTCG keys, that provider too — using your keys, for
-      that one lookup.</td>
+      <td>The Pokémon TCG API, TCGdex (Japanese Pokémon, and from version 1.1 Cardmarket prices for English
+      Pokémon), Scryfall or YGOPRODeck, depending on the game.
+      <p>From version 1.1, graded prices, and prices for One Piece, Lorcana, Digimon, Dragon Ball, Union
+      Arena and Flesh and Blood, come through <strong>CardCapture's price relay</strong>: a Cloudflare
+      Worker that asks JustTCG with CardCapture's own key. It is sent the card's game and its name or
+      printed code, and for a graded price the grader and the grade — nothing else. Like any server on
+      the internet it sees the IP address a request comes from; it uses it for at most a minute, to stop
+      any one address flooding it, and never stores or logs it. Answers are kept by card for up to a
+      week, so the next lookup of the same card is answered without asking JustTCG again; they say
+      nothing about who asked. Cloudflare runs the relay and handles the connection as it does for any
+      website.</p>
+      <p>If you have supplied your own eBay, Amazon or JustTCG keys, that provider too — using your
+      keys, for that one lookup, straight from your device.</p></td>
     </tr>
     <tr>
       <td>You check a slab's certificate, or its sold prices</td>
@@ -154,8 +166,9 @@
     </tr>
     <tr>
       <td>A price alert checks in</td>
-      <td>The same price providers, from your device, in the background. No server is told which
-      cards you watch, because the watching happens on your phone.</td>
+      <td>The same price providers, and the price relay for the cards it prices, from your device, in
+      the background. No server is told which cards you watch: the watching happens on your phone, and
+      a lookup for a watched card looks like any other.</td>
     </tr>
     <tr>
       <td>You buy a subscription or a scan pack</td>

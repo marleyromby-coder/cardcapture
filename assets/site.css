@@ -1,0 +1,229 @@
+/* CardCapture — website. Dark, calm, the app's own colours. No external fonts, no tracking. */
+:root {
+  --bg: #0B0D10;
+  --surface: #14171B;
+  --raised: #1D2126;
+  --hairline: rgba(255, 255, 255, 0.08);
+  --text: #F2F5F8;
+  --text-2: #9CA5B0;
+  --text-3: #7D8896;
+  --accent: #2EBFB3;
+  --teal: #32C9C0;
+  --pink: #F34799;
+  --gold: #FFD15C;
+  --radius: 20px;
+  --font: ui-rounded, "SF Pro Rounded", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --max: 1120px;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img, video { max-width: 100%; height: auto; display: block; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+.skip {
+  position: absolute; left: 16px; top: -48px; z-index: 10;
+  background: var(--accent); color: #000; padding: 10px 14px; border-radius: 10px; font-weight: 700;
+}
+.skip:focus { top: 12px; }
+
+/* ---------- Navigation ---------- */
+.nav {
+  max-width: var(--max); margin: 0 auto; padding: 18px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.brand { display: flex; align-items: center; gap: 10px; color: var(--text); font-weight: 800; font-size: 19px; letter-spacing: -0.01em; }
+.brand:hover { text-decoration: none; }
+.brand img { width: 32px; height: 32px; }
+.lang {
+  display: inline-flex; align-items: center; min-height: 44px;
+  color: var(--text-2); font-weight: 600; font-size: 15px;
+  border: 1px solid var(--hairline); border-radius: 999px; padding: 0 16px;
+}
+.lang:hover { color: var(--text); text-decoration: none; border-color: rgba(255,255,255,.2); }
+
+/* ---------- Hero ---------- */
+.hero {
+  max-width: var(--max); margin: 0 auto; padding: 16px 20px 40px;
+  display: grid; gap: 20px; align-items: center;
+}
+h1 {
+  font-size: clamp(2.6rem, 8vw, 4.6rem); line-height: 1.0; letter-spacing: -0.035em;
+  font-weight: 800; margin: 0 0 20px;
+}
+h1 .tagline {
+  display: block; margin-bottom: 16px;
+  color: var(--teal); font-size: 1.05rem; line-height: 1.4; letter-spacing: 0; font-weight: 700;
+}
+h1 .line { display: block; }
+h1 .l1 { color: var(--teal); }
+h1 .l2 { color: var(--text); }
+h1 .l3 { color: var(--pink); }
+.lede { color: var(--text-2); font-size: clamp(1.08rem, 2.4vw, 1.25rem); margin: 0 0 26px; max-width: 36ch; text-wrap: pretty; }
+.fine { color: var(--text-3); font-size: 13.5px; margin: 14px 0 0; }
+.hero-visual { position: relative; }
+.hero-visual::before {
+  content: ""; position: absolute; inset: 10% 8%; z-index: -1; filter: blur(70px); opacity: .5;
+  background: radial-gradient(40% 40% at 70% 65%, rgba(50,201,192,.55), transparent 70%),
+              radial-gradient(35% 35% at 25% 35%, rgba(243,71,153,.40), transparent 70%);
+}
+.hero-video {
+  width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: var(--bg);
+  /* The video is opaque; lighten lets the glow behind it show through its dark background,
+     so there is no square edge where the glow stops. */
+  mix-blend-mode: lighten;
+}
+
+@media (min-width: 900px) {
+  .hero { grid-template-columns: 1fr 1.05fr; gap: 28px; padding-top: 40px; padding-bottom: 72px; }
+}
+
+/* ---------- Store button ---------- */
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; }
+.store {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: var(--text); color: #0B0D10; border-radius: 16px; padding: 12px 20px 12px 16px;
+  font-weight: 700; line-height: 1.15; min-height: 56px;
+}
+.store:hover { text-decoration: none; background: #fff; }
+.store small { display: block; font-size: 12px; font-weight: 600; opacity: .7; }
+.store span { font-size: 18px; }
+.store svg { width: 26px; height: 26px; flex: none; }
+.store.soon { background: var(--raised); color: var(--text); border: 1px solid var(--hairline); cursor: default; }
+.store.soon small { color: var(--accent); opacity: 1; }
+.badge { display: inline-block; border-radius: 10px; }
+.badge img { height: 54px; width: auto; }
+.text-link {
+  display: inline-flex; align-items: center; min-height: 44px;
+  color: var(--text-2); font-weight: 600; text-decoration: underline; text-underline-offset: 4px;
+  text-decoration-color: rgba(156,165,176,.4);
+}
+.text-link:hover { color: var(--text); }
+
+/* ---------- Sections ---------- */
+section { max-width: var(--max); margin: 0 auto; padding: 56px 20px; }
+.section-title {
+  font-size: clamp(1.9rem, 4.6vw, 2.8rem); line-height: 1.08; letter-spacing: -0.025em;
+  font-weight: 800; margin: 0 0 30px; text-wrap: balance; max-width: 22ch;
+}
+.section-intro { color: var(--text-2); font-size: 1.1rem; margin: -14px 0 28px; max-width: 52ch; }
+
+/* How it works: the three steps, each with one of the brand's cards in 3D */
+.trio-grid { display: grid; gap: 18px; }
+@media (min-width: 860px) { .trio-grid { grid-template-columns: repeat(3, 1fr); } }
+.trio-item {
+  background: var(--surface); border: 1px solid var(--hairline); border-radius: var(--radius);
+  padding: 22px 22px 26px; perspective: 900px;
+}
+.trio-card {
+  width: 52%; max-width: 220px; margin: 4px auto 20px; transform-style: preserve-3d;
+  transition: transform .25s cubic-bezier(.2,.8,.2,1);
+  filter: drop-shadow(0 22px 28px rgba(0,0,0,.45));
+}
+.kicker { margin: 0 0 4px; font-size: 13px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+[data-card="teal"] .kicker { color: var(--teal); }
+[data-card="white"] .kicker { color: var(--text); }
+[data-card="pink"] .kicker { color: var(--pink); }
+.trio-item h3 { font-size: 1.4rem; line-height: 1.2; letter-spacing: -0.015em; margin: 0 0 10px; text-wrap: balance; }
+.trio-item p { color: var(--text-2); margin: 0; }
+.proof {
+  margin-top: 16px !important; padding-top: 14px; border-top: 1px solid var(--hairline);
+  font-size: 14.5px; color: var(--text) !important;
+}
+.bridge {
+  margin: 30px auto 0; max-width: 60ch; text-align: center; text-wrap: balance;
+  color: var(--text); font-size: 1.1rem; font-weight: 600;
+}
+
+/* Features */
+.feature-grid { display: grid; gap: 14px; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .feature-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .feature-grid { grid-template-columns: repeat(4, 1fr); } }
+.feature {
+  background: var(--surface); border: 1px solid var(--hairline); border-radius: var(--radius);
+  padding: 20px;
+}
+.feature .icon {
+  width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 14px;
+  background: rgba(46,191,179,.12); color: var(--accent);
+}
+.feature .icon svg { width: 22px; height: 22px; }
+.feature h3 { font-size: 1.1rem; margin: 0 0 6px; letter-spacing: -0.01em; }
+.feature p { color: var(--text-2); margin: 0; font-size: 15.5px; }
+
+/* Games */
+.games-list { font-size: clamp(1.15rem, 2.6vw, 1.45rem); color: var(--text); margin: 0; max-width: 46ch; text-wrap: pretty; }
+.games-prices { color: var(--text-2); margin: 18px 0 0; max-width: 60ch; }
+
+/* Pricing */
+.plan-grid { display: grid; gap: 16px; }
+@media (min-width: 760px) { .plan-grid { grid-template-columns: 1fr 1fr; } }
+.plan {
+  background: var(--surface); border: 1px solid var(--hairline); border-radius: var(--radius); padding: 24px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.plan.highlight { border-color: rgba(46,191,179,.55); box-shadow: 0 0 0 1px rgba(46,191,179,.25), 0 20px 60px -30px rgba(46,191,179,.5); }
+.plan h3 { margin: 0; font-size: 1.15rem; }
+.plan .price { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.plan ul { margin: 6px 0 0; padding-left: 18px; color: var(--text-2); }
+.plan li { margin: 5px 0; }
+.plan .price-lines { list-style: none; padding: 0; margin: 4px 0 0; color: var(--text); }
+.price-lines li { margin: 2px 0; font-size: 1.02rem; }
+.price-lines strong { font-size: 1.55rem; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; margin-right: 4px; }
+.price-lines .note { color: var(--text-2); }
+.trial { margin: 4px 0 0; color: var(--teal); font-weight: 700; }
+.pricing-notes { display: grid; gap: 16px; margin-top: 16px; }
+@media (min-width: 760px) { .pricing-notes { grid-template-columns: 1fr 1fr; } }
+.topup, .fair {
+  margin: 0; background: transparent; border: 1px dashed rgba(255,255,255,.14); border-radius: var(--radius); padding: 20px 24px;
+}
+.topup { color: var(--text); align-self: start; }
+.fair h3 { margin: 0 0 8px; font-size: 1.05rem; }
+.fair ul { margin: 0; padding-left: 18px; color: var(--text-2); }
+.fair li { margin: 5px 0; }
+
+/* FAQ */
+.faq-list { display: grid; gap: 10px; max-width: 820px; }
+details {
+  background: var(--surface); border: 1px solid var(--hairline); border-radius: 16px; padding: 4px 20px;
+}
+summary {
+  cursor: pointer; list-style: none; font-weight: 700; padding: 14px 0; min-height: 44px;
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+}
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; color: var(--accent); font-size: 22px; line-height: 1; transition: transform .2s; flex: none; }
+details[open] summary::after { transform: rotate(45deg); }
+details p { color: var(--text-2); margin: 0 0 16px; }
+
+/* Closing */
+.closing { text-align: center; padding-bottom: 80px; }
+.closing-mark { margin: 0 auto 18px; width: 72px; height: 72px; }
+.closing h2 { font-size: clamp(1.8rem, 4.4vw, 2.6rem); letter-spacing: -0.025em; margin: 0 auto 22px; max-width: 20ch; text-wrap: balance; }
+.closing .cta-row { justify-content: center; }
+
+/* Footer */
+.footer {
+  max-width: var(--max); margin: 0 auto; padding: 28px 20px 48px; border-top: 1px solid var(--hairline);
+  color: var(--text-2); font-size: 15px;
+}
+.footer p { margin: 6px 0; }
+.footer a { display: inline-block; padding: 8px 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .trio-card, summary::after { transition: none; }
+}
