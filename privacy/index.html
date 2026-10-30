@@ -56,7 +56,7 @@
     <span>CardCapture</span>
   </a>
 
-  <p class="kicker">Privacy Policy · Last updated 23 October 2026</p>
+  <p class="kicker">Privacy Policy · Last updated 30 October 2026</p>
   <h1>What CardCapture knows about you.</h1>
   <p class="lead">Almost nothing, and none of it is kept. CardCapture has no accounts on a server
   and keeps no record of you. From version 1.1 it runs one small server, a price relay, which
@@ -171,6 +171,24 @@
       your browser, with the card's name, set and number in the address. Nothing about you is
       sent, and nothing is sent at all until you tap. What you do on the store's site is between
       you and the store, under its own privacy policy.</td>
+    </tr>
+    <tr>
+      <td>You open Market</td>
+      <td>From version 1.2, CardCapture's price relay asks JustTCG for the most valuable cards of a fixed
+      list of popular sets and their last 30 days of sales. The request names a set, never you or your
+      cards, and is the same for everyone who opens Market; the answer is kept on your device for six
+      hours, and the relay keeps it by set and writes no log, as above.</td>
+    </tr>
+    <tr>
+      <td>You open a card, a scan or a wish, and it shows what is on eBay now</td>
+      <td>From version 1.2, CardCapture's price relay asks eBay for that card's Buy It Now listings. It
+      sends eBay the card's name and printed number (and its grade, for a slab), the eBay site for your
+      phone's region, and the country set on your phone, so postage is worked out to it and only
+      listings that ship there come back. eBay is asked by the relay, not by your phone, and is told
+      nothing about you; the relay keeps the answer by card for up to six hours and writes no log, as
+      above. The listings' photos load from eBay's image servers, which, like any image on the web,
+      see the IP address that asks for them. Tapping a listing opens it on eBay, in its app or your
+      browser, under eBay's own privacy policy.</td>
     </tr>
     <tr>
       <td>A price alert checks in</td>
