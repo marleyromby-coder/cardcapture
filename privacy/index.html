@@ -56,7 +56,7 @@
     <span>CardCapture</span>
   </a>
 
-  <p class="kicker">Privacy Policy · Last updated 31 October 2026</p>
+  <p class="kicker">Privacy Policy · Last updated 8 November 2026</p>
   <h1>What CardCapture knows about you.</h1>
   <p class="lead">Almost nothing, and none of it is kept. CardCapture has no accounts on a server
   and keeps no record of you. From version 1.1 it runs one small server, a price relay, which
@@ -76,12 +76,22 @@
   </div>
 
   <h2>What stays on your device</h2>
-  <p>Your collection, your scan history, your recorded price history, your saved price alerts,
-  your free-scan count and your purchase entitlements are all stored in the app's own container
-  on your device.</p>
-  <p>Two things also go into the iOS keychain: the free-scan count, so deleting and reinstalling
-  the app does not silently reset your remaining free scans, and any marketplace API keys you
-  choose to enter. Keychain items are readable only by this app on this device.</p>
+  <p>Your collection, your scan history, your recorded price history, your saved price alerts
+  and your purchase entitlements are all stored in the app's own container on your device.
+  Scanning a card, a stack or a binder page is free and is not counted.</p>
+  <p>Two things also go into the iOS keychain: how many of the free condition gradings have been
+  used, so deleting and reinstalling the app does not silently hand out new ones, and any
+  marketplace API keys you choose to enter. Keychain items are readable only by this app on this
+  device.</p>
+  <h3>The free gradings and Apple's DeviceCheck</h3>
+  <p>From version 1.2, the count of free gradings used is also agreed with CardCapture's price
+  relay, so that erasing the phone does not reset it either. The app asks iOS for a
+  <strong>DeviceCheck token</strong> — a one-time, opaque value Apple issues for the device,
+  which says nothing about you, your Apple Account or your cards — and sends it to the relay with
+  the count. The relay passes it to Apple, which keeps two bits per device for CardCapture: that
+  is the whole record, and it holds only the count. The relay stores and logs nothing, and the
+  count is never tied to an account, a name or an address. Apple's own description of this
+  service is in its developer documentation for DeviceCheck.</p>
 
   <h2>Signing in — optional, and nothing reaches us</h2>
   <p>CardCapture offers to sign you in on first launch, and lets you carry on without an
@@ -156,7 +166,7 @@
       week, so the next lookup of the same card is answered without asking JustTCG again; they say
       nothing about who asked. Cloudflare runs the relay and handles the connection as it does for any
       website.</p>
-      <p>If you have supplied your own eBay, Amazon or JustTCG keys, that provider too — using your
+      <p>If you have supplied your own eBay or JustTCG keys, that provider too — using your
       keys, for that one lookup, straight from your device.</p></td>
     </tr>
     <tr>
@@ -167,7 +177,7 @@
     </tr>
     <tr>
       <td>You tap Find it for sale</td>
-      <td>The store you picked — eBay, Amazon, Cardmarket or TCGplayer — opens in its own app or
+      <td>The store you picked — eBay or Cardmarket — opens in its own app or
       your browser, with the card's name, set and number in the address. Nothing about you is
       sent, and nothing is sent at all until you tap. What you do on the store's site is between
       you and the store, under its own privacy policy.</td>
@@ -206,7 +216,7 @@
       a lookup for a watched card looks like any other.</td>
     </tr>
     <tr>
-      <td>You buy a subscription or a scan pack</td>
+      <td>You buy a subscription or gradings</td>
       <td>Apple, through StoreKit. CardCapture is told only whether a purchase is active. It
       never sees your payment details.</td>
     </tr>
