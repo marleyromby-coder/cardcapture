@@ -56,7 +56,7 @@
     <span>CardCapture</span>
   </a>
 
-  <p class="kicker">Privacy Policy · Last updated 8 November 2026</p>
+  <p class="kicker">Privacy Policy · Last updated 13 November 2026</p>
   <h1>What CardCapture knows about you.</h1>
   <p class="lead">Almost nothing, and none of it is kept. CardCapture has no accounts on a server
   and keeps no record of you. From version 1.1 it runs one small server, a price relay, which
@@ -76,8 +76,9 @@
   </div>
 
   <h2>What stays on your device</h2>
-  <p>Your collection, your scan history, your recorded price history, your saved price alerts
-  and your purchase entitlements are all stored in the app's own container on your device.
+  <p>Your collection and the photos kept with your cards, your scan history, your recorded
+  price history, your saved price alerts and your purchase entitlements are all stored in the
+  app's own container on your device.
   Scanning a card, a stack or a binder page is free and is not counted.</p>
   <p>Two things also go into the iOS keychain: how many of the free condition gradings have been
   used, so deleting and reinstalling the app does not silently hand out new ones, and any
@@ -119,7 +120,8 @@
 
   <h3 id="delete-account">Deleting your account</h3>
   <p>From version 1.1, <em>Settings &rsaquo; Account &rsaquo; Delete account</em> deletes the
-  account and everything kept under it: its cards, scans, scan photos, condition records and
+  account and everything kept under it: its cards and the photos kept with them, scans, scan
+  photos, condition records and
   backups on this iPhone, its copy in your private iCloud, and, for the email option, the stored
   credential. It cannot be undone. A subscription belongs to your Apple Account and is cancelled
   in the Settings app; for Sign in with Apple, you can also stop CardCapture using your Apple
@@ -242,10 +244,19 @@
   <p>The camera is used to scan cards and, if you ask for it, to capture the tilt and edge
   photographs the verification checks need. All of that processing happens on your device.
   CardCapture does not request access to your photo library.</p>
-  <p>If you turn on <em>Keep a photo of each scan</em> in Settings &rsaquo; Scan log, a photo of
-  each scanned card is kept on your device — the newest 300 — and included when you export the
-  scan log yourself. It is off unless you turn it on, and the photos are never sent anywhere by
-  the app.</p>
+  <p>From version 1.3, when you scan a card that has no catalog picture and add it to your
+  collection, the app keeps your own photo of that card, cropped to the card, and shows it as
+  the card's picture, marked <em>Your photo</em>. The photo is kept in the app's storage on this
+  device only. It is not sent to us or to anyone else, it is not part of the iCloud copy of your
+  collection, and it is not used in widgets or in the year review you can share. Like everything
+  the app stores, it is included in your own iPhone backup if you keep one. You can remove the
+  photo on the card's page, and you can turn this off in Settings. The photo is also deleted
+  when you remove the card, delete your account or delete the app. A condition record (card
+  passport) likewise keeps the photo it was made from, on this device.</p>
+  <p>Separately, if you turn on <em>Keep a photo of each scan</em> in Settings &rsaquo; Scan log,
+  a photo of every scan, whether or not you add the card, is kept on your device — the newest
+  300 — and included when you export the scan log yourself. That is off unless you turn it on.
+  None of these photos is ever sent anywhere by the app.</p>
 
   <h2>Notifications</h2>
   <p>Price alerts are <strong>local</strong> notifications, created on your device by your
