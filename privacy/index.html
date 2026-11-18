@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Privacy Policy — CardCapture</title>
-<meta name="description" content="CardCapture privacy policy: no analytics, no tracking, no ads. Signing in is optional, and nothing about you is sent to a server." />
+<meta name="description" content="CardCapture privacy policy: no analytics, no tracking, no ads. Nothing about you is kept on a server unless you join the optional community." />
 <meta name="theme-color" content="#0b0d10" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230b0d10'/><circle cx='14' cy='14' r='7' fill='none' stroke='%232ebfb3' stroke-width='2'/><path d='M19 19 L26 26' stroke='%232ebfb3' stroke-width='2.5' stroke-linecap='round'/></svg>" />
 <style>
@@ -56,18 +56,20 @@
     <span>CardCapture</span>
   </a>
 
-  <p class="kicker">Privacy Policy · Last updated 13 November 2026</p>
+  <p class="kicker">Privacy Policy · Last updated 18 November 2026</p>
   <h1>What CardCapture knows about you.</h1>
-  <p class="lead">Almost nothing, and none of it is kept. CardCapture has no accounts on a server
-  and keeps no record of you. From version 1.1 it runs one small server, a price relay, which
-  passes price lookups on and writes no log. No analytics, no tracking, no advertising
-  identifier, and no third-party SDK that phones home.
-  This page explains exactly what the app stores, what it sends, and where it goes.</p>
+  <p class="lead">Very little, and you decide the rest. The app itself keeps no record of you: no
+  analytics, no tracking, no advertising identifier, and no third-party SDK that phones home.
+  Prices come through a small relay that names a card, never you, and writes no log. From
+  version 1.4 there is a community you can join if you want to. If you do, the community's
+  server holds the profile you make and what you post there, and nothing else about you. This
+  page explains exactly what the app stores, what it sends, and where it goes.</p>
 
   <div class="card">
     <strong>The short version</strong>
     <ul>
-      <li><strong>Nothing about you is kept by us.</strong> From version 1.1 some prices come through CardCapture's price relay: the request names a card, never you, and the relay writes no log. There is no CardCapture account server and no backend that stores anything about you.</li>
+      <li><strong>Nothing about you is kept by us unless you join the community.</strong> Price lookups name a card, never you, and the relay writes no log.</li>
+      <li><strong>The community is optional.</strong> From version 1.4, joining makes a profile on CardCapture's own server: a username, a name and a picture you choose, what you post, and how your collection has moved in percent. You can read everything it holds and delete all of it, in the app.</li>
       <li><strong>Scanning happens on your device</strong> — the camera, the text recognition, the artwork matching, the print and condition analysis. No photo is uploaded for recognition.</li>
       <li><strong>Signing in is offered, not required.</strong> If you do, the account is stored on your device — no CardCapture server holds it. Every feature works either way, and a subscription follows your Apple Account rather than any account of ours.</li>
       <li><strong>With an account, your collection is backed up to your own private iCloud,</strong> which we cannot read. Without one, it stays on your device unless you turn iCloud on.</li>
@@ -117,6 +119,8 @@
 
   <p>Signing out keeps your collection and, for the email option, keeps the stored credential so
   you can sign back in.</p>
+  <p>This is the app's own sign-in. The community (below) has a separate sign-in with Apple, and
+  that one does reach a server.</p>
 
   <h3 id="delete-account">Deleting your account</h3>
   <p>From version 1.1, <em>Settings &rsaquo; Account &rsaquo; Delete account</em> deletes the
@@ -240,10 +244,75 @@
   is deleted; you will get no message. The legal basis is your consent, given by submitting the
   form, which you can withdraw at any time the same way.</p>
 
+  <h2 id="community">The community — optional, and the one place we keep something</h2>
+  <p>From version 1.4 the app has a community: collectors following each other and posting about
+  their cards. You do not have to join it, and the rest of the app works the same if you do
+  not. Until you join, opening the tab sends nothing about you.</p>
+  <p><strong>Joining.</strong> You are asked the month and year you were born. That answer stays on
+  your phone; the community is for people aged 13 and over, and the server is told only that the
+  age is met. You then sign in with Apple. Apple tells our server that it is you; we ask for
+  neither your name nor your email. The server keeps a scrambled form of Apple's identifier for
+  you, which lets it recognise you next time and cannot be turned back into the identifier.</p>
+  <h3>What the server holds once you have a profile</h3>
+  <ul>
+    <li>the username and name you choose, and your picture: a letter on a colour, one of your own
+    cards, or a photo you choose to upload;</li>
+    <li>your posts and comments, what you like, whom you follow and whom you have blocked;</li>
+    <li>how many cards you hold and how your collection has changed in percent over a week, a
+    month, three months and a year, with the shape of its line;</li>
+    <li>for each binder you choose to show: its name and its cards, each with its change in
+    percent over the past month. No price is sent for any card;</li>
+    <li>what your collection is worth, <strong>only while you have switched "Show what my
+    collection is worth" on</strong>. It is off until you turn it on, it is offered only to
+    members aged 18 and over, and switching it off removes the figure from the server at once;</li>
+    <li>if you have Pro: that you do, so a check can show beside your name. The app names one
+    purchase to the server, which asks Apple about it and keeps a scrambled form of the purchase
+    and the date the check runs to;</li>
+    <li>reports you make, until they have been answered, and what was decided.</li>
+  </ul>
+  <p><strong>A profile photo</strong>, if you upload one, is cut to a small square on your phone, and
+  the place it was taken and other details stored in the picture are removed before it is sent.
+  Before anyone else sees it, it is checked automatically by an AI model run for us by
+  Cloudflare, which does not keep it or learn from it; a photo the check is unsure about is looked
+  at by the developer. Until it has been approved, others see your letter. A private profile's
+  photo is shown only to the people you have accepted. You can remove it at any time, and it is
+  deleted with your profile.</p>
+  <p><strong>Following.</strong> When you join, your profile follows CardCapture's own account,
+  @cardcapture, for news about the app and new sets. You can unfollow it at any time. Only that
+  account can see the list of who follows it.</p>
+  <p><strong>Who sees it.</strong> A profile is private until you open it. Private: only people you
+  accept see your collection figures and your posts; anyone in the community can find your
+  username, name and picture and ask to follow you. Public: everyone in the community can see
+  them. Nothing in the community is on the web, and none of it is shown to anyone outside the
+  app.</p>
+  <p><strong>What we do with it.</strong> We run the community with it, and nothing else. It is not
+  used for advertising, not used to track you, not sold and not shared. Reports are read by the
+  developer, who can remove a post, a comment or a profile that breaks the
+  <a href="../community/">community terms</a>.</p>
+  <p><strong>Where it is.</strong> On a server and database run for CardCapture by Cloudflare, with
+  the database kept in the European Union. Like any server it sees the address a request comes
+  from; it uses it for a minute, to stop one address from flooding it, and does not store or log
+  it. The server writes no log of what you do.</p>
+  <p><strong>How long.</strong> Until you delete it. A post or comment that was removed for breaking
+  the terms is kept out of sight for 30 days, in case the decision is challenged, and then
+  deleted. A profile not opened for 24 months is deleted. A profile removed for breaking the terms
+  is deleted after 30 days, and a scrambled marker is kept for 12 months so the same Apple Account
+  cannot simply join again.</p>
+  <p><strong>Your choices.</strong> In the app, on your profile: change or hide what it shows, get a
+  copy of everything the server holds about you, sign out, or delete the profile. Deleting removes
+  the profile, your posts, comments, likes and follows at once; Apple asks you to confirm that it
+  is you. You can also write to
+  <a href="mailto:support@cardcaptureapp.site">support@cardcaptureapp.site</a>.</p>
+  <p><strong>The legal basis</strong> is the agreement you enter by joining: we cannot show a profile
+  without keeping one. You can end it at any time by deleting the profile.</p>
+
   <h2>Camera and photos</h2>
   <p>The camera is used to scan cards and, if you ask for it, to capture the tilt and edge
   photographs the verification checks need. All of that processing happens on your device.
-  CardCapture does not request access to your photo library.</p>
+  CardCapture does not request access to your photo library. From version 1.4 the camera can
+  also take a community profile photo, or you can pick one in the system's photo picker, which
+  hands the app only the picture you choose; what happens to it is described under
+  <a href="#community">The community</a>.</p>
   <p>From version 1.3, when you scan a card that has no catalog picture and add it to your
   collection, the app keeps your own photo of that card, cropped to the card, and shows it as
   the card's picture, marked <em>Your photo</em>. The photo is kept in the app's storage on this
@@ -269,28 +338,38 @@
   widgets can read; nothing is sent anywhere for them.</p>
 
   <h2>Children</h2>
-  <p>CardCapture is for collectors of any age and does not knowingly collect personal
-  information from anyone, children included.</p>
+  <p>The app itself is for collectors of any age and keeps nothing about anyone. The community
+  is for people aged 13 and over: the app asks the month and year of birth before anyone can
+  join, keeps the answer on the phone, and does not let anyone younger make a profile. If you
+  believe someone under 13 has a profile, report it in the app or write to
+  <a href="mailto:support@cardcaptureapp.site">support@cardcaptureapp.site</a> and it will be
+  removed.</p>
 
   <h2>What Apple's privacy label says</h2>
-  <p>CardCapture's App Store page says <strong>Data Not Collected</strong>, and the app ships a
-  <code>PrivacyInfo.xcprivacy</code> manifest declaring no tracking and no collected data. That
-  follows Apple's own definition: data counts as collected when it leaves your device somewhere
-  the developer or a partner can reach it, and nothing about you does. What you sign in with
-  stays in your device's keychain; your collection stays in the app and, when you sign in or turn
-  it on, in your own private iCloud. This page is the readable version of that declaration.</p>
+  <p>From version 1.4, CardCapture's App Store page lists, under <strong>Data Linked to
+  You</strong>, what the community holds for those who join it: a user ID (the username), a name
+  (the one you choose), user content (your posts and what your profile shows), photos (a profile
+  photo, if you upload one), and purchase history (that you have Pro, for the check beside your
+  name). All five are used only to make the community work, and none is used to track you.
+  Everything else the app handles stays on your device or names a card rather than you, which by
+  Apple's definition is not collected. The app ships a <code>PrivacyInfo.xcprivacy</code> manifest
+  that says the same. Before version 1.4 the page said <strong>Data Not Collected</strong>, which
+  was true then: there was no community. This page is the readable version of that
+  declaration.</p>
 
   <h2>Changes</h2>
   <p>If this policy changes, the date at the top changes with it. Material changes will be
   described in the App Store release notes for the version that introduces them.</p>
 
   <h2>Contact</h2>
-  <p>Questions about this policy, or a request about your data, can be sent through the support
-  link on the CardCapture App Store listing, which reaches the developer directly.</p>
+  <p>Questions about this policy, or a request about your data, can be sent to
+  <a href="mailto:support@cardcaptureapp.site">support@cardcaptureapp.site</a> or through the
+  support link on the CardCapture App Store listing. Both reach the developer directly.</p>
 
   <footer>
     © 2026 CardCapture · No analytics · No tracking · No ads<br>
-    Terms of use: <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple's Standard EULA</a>
+    Terms of use: <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple's Standard EULA</a> ·
+    <a href="../community/">Community terms</a>
   </footer>
 
 </div>
